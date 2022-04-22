@@ -5,6 +5,8 @@ Deploying Rasa Bot over Google Cloud Platform using Docker.
 
 ## Prerequisites:
 - RASA
+- Anaconda Prompt
+- Visual Studio Code
 
 ## Instructions:
 
@@ -60,7 +62,7 @@ Open a new Anaconda Prompt
 
 ## RUN Chatbot
 
-Open one Ananconda prompt and move into ```rikjai``` folder
+Open one Ananconda prompt and move into ```Chaitanya``` folder
 
 - > rasa run -m models --enable-api --cors “*” --debug
 
