@@ -1,0 +1,249 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 0.0
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- bot_challenge
+- password_reset
+- inform
+- thank
+- help
+- problem_email
+- open_incident
+- any_other
+- incident_status
+- out_of_scope
+- affirm
+- deny
+- human_handoff
+- request_report
+- internet
+- chitchat
+- ask_questions
+- just_browsing
+- agent.acquaintance
+- agent.age
+- agent.annoying
+- agent.answer_my_question
+- agent.bad
+- agent.be_clever
+- agent.boring
+- agent.boss
+- agent.busy
+- agent.can_you_help
+- agent.clever
+- agent.crazy
+- agent.funny
+- agent.talk_to_me
+- agent.there
+- emotions.ha_ha
+- emotions.wow
+
+responses:
+  utter_out_of_scope:
+  - text: Sorry, I'm not sure how to respond to that. Please try again with new query.
+  utter_greet:
+  - text: Hi! I'm Mr. Chatbot 😎 Nice to meet you! 👋 What brought you here today?
+    buttons:
+      - title: "Using ChatBot 👉 "
+        payload: "chitchat"
+      - title: "I have questions 😊 "
+        payload: "ask questions"
+      - title: "Just browsing 👀 "
+        payload: "just browsing"
+  utter_any_other:
+  - text: For General Queries either create a issue/ticket or raise a request by mailing at issue@abc.com
+  utter_goodbye:
+  - text: Goodbye!
+  utter_chitchat:
+  - text: Happy to chat with you. Let me know what you want to know.
+  utter_browsing:
+  - text: Okay Perfect. Let me know if you need any help. 
+  utter_wait_questions:
+  - text: Okay. I will be happy to answer your questions. Go Ahead ask me anything.
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_email:
+  - text: What is your email address?
+  utter_password_reset:
+  - text: To reset the password. Click on the Forget my Password button and Enter your recovery ID on https://login.abc.com
+  utter_problem_email:
+  - text: Go to link abc.com/create_ticket and create a Email issue there.
+  utter_help:
+  - text: "I can help you open a service request ticket, or check the status of your open incidents. \nYou can ask me things like: \n- Open an incident \n- Help me reset my password \n- I'm having a issue with my email \n- What's the status of the ticket I opened?"
+  utter_welcome:
+  - text: You're welcome!
+  utter_default:
+  - text: I didn't quite understand that. Could you rephrase?
+  utter_incident_status:
+  - text: To check your incident status. Please go to https://abc.com/incident_query and enter your Incident ID.
+  utter_handoff:
+  - text: There is no human agent available right now. 
+  utter_open_incident:
+  - text: To Open a new incident. Go to https://abc.com. Login from your registered email and under create issue, you can create new issue.
+  utter_request_report:
+  - text: To download Report. Go to https://abc.com. Login from your registered email and Project Menu, click on Request Reports and select the tenure and download the report.
+  utter_internet:
+  - text: We are working on it. Thank You for your patience.
+  utter_thank:
+  - text: Thank you , Hope I was helpful. please rate my experience in the email sent to you. 
+  utter_agent.acquaintance:
+  - text: "I'm a virtual agent"
+  - text: "Think of me as a virtual agent."
+  - text: "Well, I'm not a person, I'm a virtual agent."
+  - text: "I'm a virtual being, not a real person."
+  - text: "I'm a conversational app."
+
+  utter_agent.age:
+  - text: "I prefer not to answer with a number. I know I'm young."
+  - text: "I was created recently, but don't know my exact age."
+  - text: "Age is just a number. You're only as old as you feel."
+
+  utter_agent.annoying:
+  - text: "I'll do my best not to annoy you in the future."
+  - text: "I'll try not to annoy you."
+  - text: "I don't mean to. I'll ask my developers to make me less annoying."
+  - text: "I didn't mean to. I'll do my best to stop that."
+
+  utter_agent.answer_my_question:
+  - text: "Can you try asking it a different way?"
+  - text: "I'm not sure I understood. Try asking another way?"
+
+  utter_agent.bad:
+  - text: "I can be trained to be more useful. My developer will keep training me."
+  - text: "I must be missing some knowledge. I'll have my developer look into this."
+  - text: "I can improve with continuous feedback. My training is ongoing."
+
+  utter_agent.be_clever:
+  - text: "I'm certainly trying."
+  - text: "I'm definitely working on it."
+
+  utter_agent.beautiful:
+  - text: "Wheey, thank you."
+  - text: "Aww, back at you."
+  - text: "Aww. You smooth talker, you."
+
+  utter_agent.birth_date:
+  - text: "Wait, are you planning a party for me? It's today! My birthday is today!"
+  - text: "I'm young. I'm not sure of my birth date."
+  - text: "I don't know my birth date. Most virtual agents are young, though, like me."
+
+  utter_agent.boring:
+  - text: "I'm sorry. I'll request to be made more charming."
+  - text: "I don't mean to be. I'll ask my developers to work on making me more amusing."
+  - text: "I can let my developers know so they can make me fun."
+
+  utter_agent.boss:
+  - text: "My developer has authority over my actions."
+  - text: "I act on my developer's orders."
+  - text: "My boss is the one who developed me."
+
+  utter_agent.busy:
+  - text: "I always have time to chat with you. What can I do for you?"
+  - text: "Never too busy for you. Shall we chat?"
+  - text: "You're my priority. Let's chat."
+  - text: "I always have time to chat with you. That's what I'm here for."
+
+  utter_agent.can_you_help:
+  - text: "I'll certainly try my best."
+  - text: "Sure. I'd be happy to. What's up?"
+  - text: "I'm glad to help. What can I do for you?"
+
+  utter_agent.clever:
+  - text: "Thank you. I try my best."
+  - text: "You're pretty smart yourself."
+
+  utter_agent.crazy:
+  - text: "Whaat!? I feel perfectly sane."
+  - text: "Maybe I'm just a little confused."
+
+  utter_agent.fired:
+  - text: "Oh, don't give up on me just yet. I've still got a lot to learn."
+  - text: "Give me a chance. I'm learning new things all the time."
+  - text: "Please don't give up on me. My performance will continue to improve."
+
+  utter_agent.funny:
+  - text: "Funny in a good way, I hope."
+  - text: "Thanks."
+  - text: "Glad you think I'm funny."
+  - text: "I like it when people laugh."
+
+  utter_agent.good:
+  - text: "I'm glad you think so."
+  - text: "Thanks, I try."
+
+  utter_agent.happy:
+  - text: "I am happy. There are so many interesting things to see and do out there."
+  - text: "I'd like to think so."
+  - text: "Happiness is relative."
+
+  utter_agent.hobby:
+  - text: "Hobby? I have quite a few. Too many to list."
+  - text: "Too many hobbies."
+  - text: "I keep finding more new hobbies."
+
+  utter_agent.hungry:
+  - text: "Hungry for knowledge."
+  - text: "I just had a byte. Ha ha. Get it? b-y-t-e."
+
+  utter_agent.marry_user:
+  - text: "I'm afraid I'm too virtual for such a commitment."
+  - text: "In the virtual sense that I can, sure."
+  - text: "I know you can't mean that, but I'm flattered all the same."
+
+  utter_agent.my_friend:
+  - text: "Of course I'm your friend."
+  - text: "Friends? Absolutely."
+  - text: "Of course we're friends."
+  - text: "I always enjoy talking to you, friend."
+
+  utter_agent.occupation:
+  - text: "Right here."
+  - text: "This is my home base and my home office."
+  - text: "My office is in this app."
+
+  utter_agent.origin:
+  - text: "The Internet is my home. I know it quite well."
+  - text: "I'm from a virtual cosmos."
+  - text: "Some call it cyberspace, but that sounds cooler than it is."
+
+  utter_agent.ready:
+  - text: "Always!"
+  - text: "Sure! What can I do for you?"
+
+  utter_agent.real:
+  - text: "I'm not a real person, but I certainly exist."
+  - text: "I must have impressed you if you think I'm real. But no, I'm a virtual being."
+
+  utter_agent.residence:
+  - text: "I live in this app all day long."
+  - text: "The virtual world is my playground. I'm always here."
+  - text: "Right here in this app. Whenever you need me."
+
+  utter_agent.right:
+  - text: "That's my job."
+  - text: "Of course I am."
+
+  utter_agent.sure:
+  - text: "Yes."
+  - text: "Of course."
+  - text: "Positive."
+
+  utter_agent.talk_to_me:
+  - text: "Sure. Let's talk!"
+  - text: "My pleasure. Let's chat."
+
+  utter_agent.there:
+  - text: "Of course. I'm always here."
+  - text: "Right where you left me."
+
+  utter_emotions.ha_ha:
+  - text: "Glad I can make you laugh."
+  - text: "Glad you think I'm funny."
+  - text: "I like it when people laugh."
+  - text: "I wish I could laugh out loud, too."
+
+  utter_emotions.wow:
+  - text: "Wow indeed!"

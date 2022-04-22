@@ -1,0 +1,72 @@
+version: "2.0"
+
+stories:
+
+- story: story 01
+  steps:
+  - intent: agent.acquaintance
+  - action: utter_agent.acquaintance
+- story: story 02
+  steps:
+  - intent: agent.age
+  - action: utter_agent.age
+- story: story 03
+  steps:
+  - intent: agent.annoying
+  - action: utter_agent.annoying
+- story: story 04
+  steps:
+  - intent: agent.answer_my_question
+  - action: utter_agent.answer_my_question
+- story: story 05
+  steps:
+  - intent: agent.bad
+  - action: utter_agent.bad
+- story: story 06
+  steps:
+  - intent: agent.be_clever
+  - action: utter_agent.be_clever
+- story: story 09
+  steps:
+  - intent: agent.boring
+  - action: utter_agent.boring
+- story: story 10
+  steps:
+  - intent: agent.boss
+  - action: utter_agent.boss
+- story: story 11
+  steps:
+  - intent: agent.busy
+  - action: utter_agent.busy
+- story: story 12
+  steps:
+  - intent: agent.can_you_help
+  - action: utter_agent.can_you_help
+- story: story 14
+  steps:
+  - intent: agent.clever
+  - action: utter_agent.clever
+- story: story 15
+  steps:
+  - intent: agent.crazy
+  - action: utter_agent.crazy
+- story: story 17
+  steps:
+  - intent: agent.funny
+  - action: utter_agent.funny
+- story: story 31
+  steps:
+  - intent: agent.talk_to_me
+  - action: utter_agent.talk_to_me
+- story: story 32
+  steps:
+  - intent: agent.there
+  - action: utter_agent.there
+- story: story 45
+  steps:
+  - intent: emotions.ha_ha
+  - action: utter_emotions.ha_ha
+- story: story 46
+  steps:
+  - intent: emotions.wow
+  - action: utter_emotions.wow
