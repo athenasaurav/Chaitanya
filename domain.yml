@@ -279,3 +279,4 @@ actions:
 - action_password_reset
 - action_incident_status_Id
 - action_open_incident
+- action_restart
