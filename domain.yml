@@ -10,7 +10,6 @@ intents:
 - inform
 - thank
 - help
-- problem_email
 - open_incident
 - any_other
 - incident_status
@@ -18,7 +17,6 @@ intents:
 - affirm
 - deny
 - human_handoff
-- request_report
 - internet
 - chitchat
 - ask_questions
@@ -98,10 +96,10 @@ responses:
   - text: What is your email address?
   utter_password_reset:
   - text: Your Email Password has been reset.
-  utter_problem_email:
-  - text: Go to link abc.com/create_ticket and create a Email issue there.
-  utter_help:
-  - text: "I can help you open a service request ticket, or check the status of your open incidents. \nYou can ask me things like: \n- Open an incident \n- Help me reset my password \n- I'm having a issue with my email \n- What's the status of the ticket I opened?"
+  # utter_problem_email:
+  # - text: Go to link abc.com/create_ticket and create a Email issue there.
+  # utter_help:
+  # - text: "I can help you open a service request ticket, or check the status of your open incidents. \nYou can ask me things like: \n- Open an incident \n- Help me reset my password \n- I'm having a issue with my email \n- What's the status of the ticket I opened?"
   utter_welcome:
   - text: You're welcome!
   utter_default:
@@ -111,7 +109,7 @@ responses:
   utter_handoff:
   - text: There is no human agent available right now. 
   utter_open_incident:
-  - text: We have created a issue and details have been emailed to you. Please save Incident ID safely.
+  - text: Sure I can help you in creating open an incident report. Please tell me your problem.
   utter_request_report:
   - text: We are preparing your report and you will receive it soon in your email.
   utter_internet:

@@ -176,6 +176,28 @@ nlu:
     - change pass word
     - I forgot my password what can I do
     - forgot my password help me reset it pls
+    - my outlook application won't open
+    - I'm having issues with outlook.
+    - issues with outlook
+    - outlook application will not open
+    - there's a problem with my email
+    - something is broken with outlook
+    - I can't log in to my email
+    - can't log in to outlook
+    - my email won't let me log in
+    - i have a problem with my email
+    - can't get to slack
+    - i cant open my email
+    - i can't able to login
+    - I'm having trouble logging into my email
+    - can you help me with me with my email please
+    - what can you do about my email it's not working
+    - can you fix outlook for me I don't know what to do
+    - something isn't right with my e-mail
+    - can you help me with my e-mail account
+    - my internet mail isn't working
+    - outlook is showing me a weird message
+    - email isn't loading can you help
 - intent: open_incident
   examples: |
     - I need to open an incident
@@ -238,30 +260,6 @@ nlu:
     - help pls
     - help?
     - hep me
-- intent: problem_email
-  examples: |
-    - my outlook application won't open
-    - I'm having issues with outlook.
-    - issues with outlook
-    - outlook application will not open
-    - there's a problem with my email
-    - something is broken with outlook
-    - I can't log in to my email
-    - can't log in to outlook
-    - my email won't let me log in
-    - i have a problem with my email
-    - can't get to slack
-    - i cant open my email
-    - i can't able to login
-    - I'm having trouble logging into my email
-    - can you help me with me with my email please
-    - what can you do about my email it's not working
-    - can you fix outlook for me I don't know what to do
-    - something isn't right with my e-mail
-    - can you help me with my e-mail account
-    - my internet mail isn't working
-    - outlook is showing me a weird message
-    - email isn't loading can you help
 - intent: inform
   examples: |
     - my email is [test@example.com]{"entity": "email", "value": "test@example.com"}
@@ -274,6 +272,16 @@ nlu:
     - [pedro_mario@gmail.com]{"entity": "email", "value": "pedro_mario@gmail.com"}
     - Email is [something@example.com]{"entity": "email", "value": "something@example.com"}
     - my email is [something@example.com]{"entity": "email", "value": "something@example.com"}
+    - my email is [testnew@microsoft.com]{"entity": "email", "value": "testnew@microsoft.com"}
+    - my email is [abraham@prescient.com]{"entity": "email", "value": "abraham@prescient.com"}
+    - [name_jaya@yahoo.com]{"entity": "email", "value": "name_jaya@yahoo.com"}
+    - Mi email es [heman@katapa.co.in]{"entity": "email", "value": "heman@katapa.co.in"}
+    - [random@example.co.uk]{"entity": "email", "value": "random@example.co.uk"}
+    - [geo@gmail.ai]{"entity": "email", "value": "geo@gmail.ai"}
+    - [huascar.tejeda@gmail.in]{"entity": "email", "value": "huascar.tejeda@gmail.in"}
+    - [pedro_mario@gmail.in]{"entity": "email", "value": "pedro_mario@gmail.in"}
+    - Email is [something@example.edu]{"entity": "email", "value": "something@example.edu"}
+    - my email is [common1232@example.edu]{"entity": "email", "value": "common1232@example.edu"}
     - [low](priority)
     - [medium](priority)
     - [high](priority)
@@ -301,6 +309,9 @@ nlu:
     - id for incident is [415]{"entity": "incident_status_Id", "value": "415"}
     - [129]{"entity": "incident_status_Id", "value": "129"}
     - [10092]{"entity": "incident_status_Id", "value": "10092"}
+    - i have an id written as [991]{"entity": "incident_status_Id", "value": "991"}
+    - here is my id [134]{"entity": "incident_status_Id", "value": "134"}
+    - fine my id is [912]{"entity": "incident_status_Id", "value": "912"}
 
 - intent: out_of_scope
   examples: |

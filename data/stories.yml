@@ -19,15 +19,31 @@ stories:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- story: problem_email
-  steps:
-  - intent: problem_email
-  - action: utter_ask_email
-  - intent: inform
-  - action: utter_problem_email
+# - story: problem_email
+#   steps:
+#   - intent: problem_email
+#   - action: utter_ask_email
+#   - intent: inform
+#   - action: utter_problem_email
 
 - story: password_reset
   steps:
+  - intent: password_reset
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: "pedro_mario@gmail.com"
+  - slot_was_set:
+    - email: "pedro_mario@gmail.com"
+  - action: action_password_reset
+  - action: action_restart
+
+- story: greet_password_reset
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
   - intent: password_reset
   - action: utter_ask_email
   - intent: inform
@@ -43,10 +59,10 @@ stories:
   - intent: out_of_scope
   - action: utter_out_of_scope
 
-- story: help
-  steps:
-  - intent: help
-  - action: utter_help
+# - story: help
+#   steps:
+#   - intent: help
+#   - action: utter_help
 
 - story: incident_status
   steps:
@@ -60,8 +76,76 @@ stories:
   - action: action_incident_status_Id
   - action: action_restart
 
+- story: greet_incident_status
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: incident_status
+  - action: utter_incident_status
+  - intent: incident_status_Id
+    entities:
+    - incident_status_Id: "11"
+  - slot_was_set:
+    - incident_status_Id: "11"
+  - action: action_incident_status_Id
+  - action: action_restart
+
+
 - story: open_incident
   steps:
+  - intent: open_incident
+  - action: utter_open_incident
+  - intent: password_reset
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: "pedro_mario@gmail.com"
+  - slot_was_set:
+    - email: "pedro_mario@gmail.com"
+  - action: action_open_incident
+  - action: action_restart
+
+- story: greet_incident_status
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: open_incident
+  - action: utter_open_incident
+  - intent: password_reset
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: "pedro_mario@gmail.com"
+  - slot_was_set:
+    - email: "pedro_mario@gmail.com"
+  - action: action_open_incident
+  - action: action_restart
+
+
+- story: open_incident
+  steps:
+  - intent: open_incident
+  - action: utter_open_incident
+  - intent: password_reset
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: "pedro_mario@gmail.com"
+  - slot_was_set:
+    - email: "pedro_mario@gmail.com"
+  - action: action_open_incident
+  - action: action_restart
+
+- story: greet_incident_status
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
   - intent: open_incident
   - action: utter_open_incident
   - intent: password_reset
@@ -78,7 +162,7 @@ stories:
   steps:
   - intent: open_incident
   - action: utter_open_incident
-  - intent: problem_email
+  - intent: help
   - action: utter_ask_email
   - intent: inform
     entities:
@@ -88,8 +172,12 @@ stories:
   - action: action_open_incident
   - action: action_restart
 
-- story: open_incident
+- story: greet_incident_status
   steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
   - intent: open_incident
   - action: utter_open_incident
   - intent: help
@@ -116,17 +204,34 @@ stories:
   - action: action_open_incident
   - action: action_restart
 
-
-- story: request report
+- story: greet_incident_status
   steps:
-  - intent: request_report
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: open_incident
+  - action: utter_open_incident
+  - intent: any_other
   - action: utter_ask_email
   - intent: inform
     entities:
     - email: "pedro_mario@gmail.com"
   - slot_was_set:
     - email: "pedro_mario@gmail.com"
-  - action: utter_request_report
+  - action: action_open_incident
+  - action: action_restart
+
+# - story: request report
+#   steps:
+#   - intent: request_report
+#   - action: utter_ask_email
+#   - intent: inform
+#     entities:
+#     - email: "pedro_mario@gmail.com"
+#   - slot_was_set:
+#     - email: "pedro_mario@gmail.com"
+#   - action: utter_request_report
 
 - story: internet
   steps:
@@ -168,27 +273,17 @@ stories:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- story: problem_email
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_questions
-  - action: utter_wait_questions
-  - intent: problem_email
-  - action: utter_ask_email
-  - intent: inform
-  - action: utter_problem_email
+# - story: problem_email
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: ask_questions
+#   - action: utter_wait_questions
+#   - intent: problem_email
+#   - action: utter_ask_email
+#   - intent: inform
+#   - action: utter_problem_email
 
-- story: password_reset
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_questions
-  - action: utter_wait_questions
-  - intent: password_reset
-  - action: utter_ask_email
-  - intent: inform
-  - action: utter_password_reset
 
 - story: out_of_scope
   steps:
@@ -199,46 +294,32 @@ stories:
   - intent: out_of_scope
   - action: utter_out_of_scope
 
-- story: help
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_questions
-  - action: utter_wait_questions
-  - intent: help
-  - action: utter_help
+# - story: help
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: ask_questions
+#   - action: utter_wait_questions
+#   - intent: help
+#   - action: utter_help
 
-- story: incident_status
-  steps:
-  - intent: incident_status
-  - action: utter_incident_status
-
-- story: open_incident
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_questions
-  - action: utter_wait_questions
-  - intent: open_incident
-  - action: utter_open_incident
-  - or:
-    - intent: password_reset
-    - intent: problem_email
-    - intent: help
-    - intent: any_other
-  - action: utter_open_incident
+# - story: incident_status
+#   steps:
+#   - intent: incident_status
+#   - action: utter_incident_status
 
 
-- story: request report
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_questions
-  - action: utter_wait_questions
-  - intent: request_report
-  - action: utter_ask_email
-  - intent: inform
-  - action: utter_request_report
+
+# - story: request report
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: ask_questions
+#   - action: utter_wait_questions
+#   - intent: request_report
+#   - action: utter_ask_email
+#   - intent: inform
+#   - action: utter_request_report
 
 - story: internet
   steps:

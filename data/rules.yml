@@ -58,10 +58,10 @@ rules:
   - intent: out_of_scope
   - action: utter_out_of_scope
 
-- rule: help
-  steps:
-  - intent: help
-  - action: utter_help
+# - rule: help
+#   steps:
+#   - intent: help
+#   - action: utter_help
 
 # - rule: incident_status
 #   steps:
