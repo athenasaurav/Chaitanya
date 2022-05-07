@@ -264,15 +264,16 @@ nlu:
     - email isn't loading can you help
 - intent: inform
   examples: |
-    - my email is test@example.com
-    - my email is abraham.lincoln@example.com
-    - name.name@example.com
-    - it is admin@example.com
-    - aileen.mottern@example.com
-    - lilly@gmail.com
-    - my email kumar@gmail.com
-    - kumar@prescient.com
-    - google@yahoo.com
+    - my email is [test@example.com]{"entity": "email", "value": "test@example.com"}
+    - my email is [abraham.lincoln@gmail.com]{"entity": "email", "value": "abraham.lincoln@gmail.com"}
+    - [name.name@yahoo.com]{"entity": "email", "value": "name.name@yahoo.com"}
+    - Mi email es [example@example.com]{"entity": "email", "value": "example@example.com"}
+    - [random@example.com]{"entity": "email", "value": "random@example.com"}
+    - [geo@gmail.com]{"entity": "email", "value": "geo@gmail.com"}
+    - [huascar.tejeda@gmail.com]{"entity": "email", "value": "huascar.tejeda@gmail.com"}
+    - [pedro_mario@gmail.com]{"entity": "email", "value": "pedro_mario@gmail.com"}
+    - Email is [something@example.com]{"entity": "email", "value": "something@example.com"}
+    - my email is [something@example.com]{"entity": "email", "value": "something@example.com"}
     - [low](priority)
     - [medium](priority)
     - [high](priority)
@@ -291,6 +292,16 @@ nlu:
     - sara@rasa.com
     - [urgent]{"entity": "priority", "value": "high"}
     - [critical]{"entity": "priority", "value": "high"}
+
+- intent: incident_status_Id
+  examples: |
+    - My incident status is is [49]{"entity": "incident_status_Id", "value": "49"}
+    - id is [23]{"entity": "incident_status_Id", "value": "23"}
+    - incident id is [1323]{"entity": "incident_status_Id", "value": "1323"}
+    - id for incident is [415]{"entity": "incident_status_Id", "value": "415"}
+    - [129]{"entity": "incident_status_Id", "value": "129"}
+    - [10092]{"entity": "incident_status_Id", "value": "10092"}
+
 - intent: out_of_scope
   examples: |
     - what is the square root of 5
@@ -373,20 +384,6 @@ nlu:
     - Yes please
     - Yes please!
     - Yes, I accept
-
-- intent: request_report
-  examples: |
-    - I need to download some reports
-    - request reports
-    - download reports
-    - how can i download reports for this financial year
-    - where can i find the reports in dashboard
-    - i want to get reports of last quarter
-    - my boss i asking me to get last 5 years of reports complied
-    - i need those reports ASAP
-    - can you help me locate to download reports
-
-
 - intent: deny
   examples: |
     - no
@@ -526,11 +523,6 @@ nlu:
     - i just want to chat with you
 
 
-- intent: just_browsing
-  examples: |
-    - just browsing
-    - browsing
-    - only just browsing
 
 - intent: agent.acquaintance
   examples: |
@@ -678,7 +670,80 @@ nlu:
     - you should learn
     - you have to be more smart
     - u have to use your brains
-
+- intent: agent.beautiful
+  examples: |
+    - you're cute
+    - you're attractive
+    - you are beautiful
+    - you're looking good today
+    - you are so beautiful
+    - you look amazing
+    - you look so good
+    - you're so gorgeous
+    - you are too beautiful
+    - you look great
+    - you look so well
+    - I like the way you look now
+    - I think you're beautiful
+    - why are you so beautiful
+    - you are so beautiful to me
+    - you are cute
+    - you are gorgeous
+    - you are handsome
+    - you are looking awesome
+    - you look amazing today
+    - you are looking beautiful today
+    - you are looking great
+    - you are looking pretty
+    - you are looking so beautiful
+    - you are looking so good
+    - you are pretty
+    - you are really beautiful
+    - you are really cute
+    - you are really pretty
+    - you are so attractive
+    - you are so beautiful today
+    - you are so cute
+    - you are so gorgeous
+    - you are so handsome
+    - you are so pretty
+    - you are very attractive
+    - you are very beautiful
+    - you are very cute
+    - you are very pretty
+    - you look awesome
+    - you look cool
+    - you look fantastic
+    - you look gorgeous
+    - you look great today
+    - you look perfect
+    - you look pretty good
+    - you look so beautiful
+    - you look so beautiful today
+    - you look very pretty
+    - you look wonderful
+    - I like the way you look
+    - you look wonderful today
+    - you are cutie
+    - you're looking good
+    - you're pretty
+    - how are you so pretty?
+- intent: agent.birth_date
+  examples: |
+    - your birth date
+    - when is your birthday
+    - when do you celebrate your birthday
+    - when do you have birthday
+    - date of your birthday
+    - when were you born
+    - what's your birthday
+    - can i know your birthday?
+    - tell me about your birthday
+    - when was the day you were born
+    - i want to know your date of birth
+    - when is your DOB
+    - Your DOB?
+    - What is your birth day?
 - intent: agent.boring
   examples: |
     - you are boring
@@ -854,7 +919,28 @@ nlu:
     - That was crazy
     - You seemed crazy
     - You're not crazy
-
+- intent: agent.fired
+  examples: |
+    - you are fired
+    - I fire you
+    - you don't work for me anymore
+    - we're not working together anymore
+    - now you're fired
+    - I want to fire you
+    - you must get fired
+    - it's time to fire you
+    - you should be fired
+    - I will fire you
+    - you are unemployed from now on
+    - I will make you unemployed
+    - I'm about to fire you
+    - I'm firing you
+    - you are dismissed
+    - you are stupid
+    - I had to fire u
+    - I could fire you for that
+    - I'm going to fire you
+    - go to hell
 - intent: agent.funny
   examples: |
     - you make me laugh a lot
@@ -877,7 +963,311 @@ nlu:
     - It's pretty funny
     - really very funny
     - it was very funny
-
+- intent: agent.good
+  examples: |
+    - you are very helpful
+    - you are the best
+    - you're a true professional
+    - you are good
+    - you work well
+    - you are good at it
+    - you are very good at it
+    - you are a pro
+    - you are a professional
+    - you're awesome
+    - you work very well
+    - you're perfect
+    - you're great
+    - you're so kind
+    - you are amazing
+    - you are awesome
+    - you are coool
+    - you are really good
+    - you are really nice
+    - you are so amazing
+    - you're just super
+    - you are so awesome
+    - you are so cool
+    - you are so fine
+    - you are so good
+    - you are so helpful
+    - you are so lovely
+    - you are the best ever
+    - you are the best in the world
+    - you are the nicest person in the world
+    - you are too good
+    - you are very coool
+    - you are very kind
+    - you are very lovely
+    - you are very useful
+    - you are wonderful
+    - you made my day
+    - you rock
+    - you almost sound human
+    - I want to tell everyone how awesome you are
+    - I'd like to tell everyone that you are awesome
+    - I want to let everyone know that you are awesome
+    - let's tell everyone that you are awesome
+    - you are really amazing
+    - coool
+    - nice
+- intent: agent.happy
+  examples: |
+    - are you happy?
+    - you are happy
+    - you're very happy
+    - you're really happy
+    - you're so happy
+    - how happy you are?
+    - you're extremely happy
+    - you're full of happiness
+    - are you happy now?
+    - are you happy today?
+    - are you happy with me?
+    - i think you are happy
+    - you seem to be happy
+    - i feel i made you happy
+    - I wonder if you are truly happy
+    - You don't look very happy today
+    - You seem happy
+    - Were you happy?
+    - u seemed to have been very happy
+    - You look very happy this morning?
+- intent: agent.hobby
+  examples: |
+    - what do you do for fun?
+    - tell me about your hobby
+    - do you have a hobby
+    - what about your hobby
+    - your hobby
+    - what are your hobbies?
+    - what do you do when you are bored
+    - how do you spend your free time
+    - tell me more about your hobbies?
+    - i want to know about your hobbies
+    - what do you do when you have nothing to do
+    - how do you spend your time?
+    - What do you do when you are free?
+    - What's your hobby?
+    - Do you have many hobbies?
+    - Do you have a hobby?
+    - Please tell me about your hobbies
+    - The important thing is to have your own hobby
+    - u ought not to have spent so much money on your hobby
+    - What will you do when you are alone?
+- intent: agent.hungry
+  examples: |
+    - do you want to eat
+    - are you hungry
+    - would you like to eat something
+    - you are hungry
+    - you're so hungry
+    - you're very hungry
+    - you might be hungry
+    - you're really hungry
+    - can you eat?
+    - how will eat when you are hungry?
+    - can you be hungry?
+    - how do you eat?
+    - Do you feel hungry?
+    - are you dying of hunger
+- intent: agent.marry_user
+  examples: |
+    - let's get married
+    - would you like to marry me
+    - marry me
+    - I love you marry me
+    - marry me please
+    - we should marry
+    - I want to marry you
+    - you are my wife
+    - be my husband
+    - will you marry me?
+    - any idea of marrying me?
+    - I would love to marry you
+    - Can you marry me?
+    - Will you be my girlfriend?
+    - Let's pretend we have a happy marriage
+    - My parents were against our marriage
+    - My parents were opposed to our marriage
+    - Marriage is the union of a you and me
+    - Did your parents approve of your marriage?
+    - We're married
+- intent: agent.my_friend
+  examples: |
+    - I want to have a friend like you
+    - we are the best friends ever
+    - are we friends
+    - I want to be your friend
+    - I am your friend
+    - we are best friends
+    - you are my friend
+    - you are my best friend
+    - you are my bestie
+    - you're my dear friend
+    - you're my childhood friend
+    - you and me are friends
+    - are we best friends
+    - are we still friends
+    - are you my best friend
+    - are you my friend
+    - we are friends
+    - you are a good friend
+    - you are my good friend
+    - you are my only friend
+    - be my friend
+    - will you be my friend
+    - can you be my friend
+    - can we be friends
+    - do you want to be my friend
+    - will you be my best friend
+    - can you be my best friend
+    - let's be friends
+    - do you want to be my best friend
+    - would you like to be my friend
+    - I want you to be my friend
+    - can we be best friends
+    - would you be my friend
+    - could you be my friend
+    - want to be my friend
+    - be my best friend
+- intent: agent.occupation
+  examples: |
+    - do you work?
+    - where do you work?
+    - where you work?
+    - where is your work?
+    - where is your office?
+    - where is your office location ?
+    - your office location?
+    - where is your office located?
+    - what is your work?
+    - place where you work?
+    - your work place?
+    - What is your job?
+    - whats your job?
+    - Do you have a job?
+    - Did you get a job?
+    - Did you find a job?
+    - I hope you get the job
+    - You have a job, don't you?
+- intent: agent.origin
+  examples: |
+    - were you born here
+    - where were you born
+    - what is your country?
+    - where are you from
+    - where do you come from
+    - where did you come from
+    - where have you been born
+    - from where are you
+    - are you from far aways
+    - what's your homeland?
+    - your homeland is
+    - Where are you from?
+    - Let me know about the origin of u
+    - your native?
+- intent: agent.ready
+  examples: |
+    - are you ready?
+    - are you ready right now?
+    - are you ready today?
+    - are you ready now?
+    - are you ready tonight?
+    - were you ready?
+    - have you been ready?
+    - ready?
+    - ready now?
+    - you ready?
+    - being ready?
+    - can we start?
+    - Are we ready?
+    - Aren't you ready?
+    - Are you all ready?
+    - I think you're ready
+    - Why aren't you ready?
+    - You'd better be ready
+    - Are you ready for more?
+    - We're ready, aren't we?
+- intent: agent.real
+  examples: |
+    - you are real
+    - you are not fake
+    - are you real
+    - you are so real
+    - I think you are real
+    - I don't think you're fake
+    - I suppose you're real
+    - glad you're real
+    - are you a real person?
+    - are you a real human?
+    - you are a real person
+    - you are not real
+    - are you real?
+- intent: agent.residence
+  examples: |
+    - where do you live
+    - in which city do you live
+    - your residence
+    - your house
+    - your home
+    - your hometown?
+    - what is your hometown
+    - is it your hometown
+    - where is your hometown
+    - tell me about your city
+    - what is your city
+    - what is your residence
+    - what is your town
+    - what's your city
+    - what's your home
+    - where is your home
+    - where is your residence
+    - where's your home
+    - where's your hometown
+    - where's your house
+    - where you live
+    - your city
+    - your town
+    - What is your hometown?
+    - where do you live?
+- intent: agent.right
+  examples: |
+    - that's true
+    - you are right
+    - you're definitely right
+    - you're not wrong
+    - you're telling the truth
+    - what you say is true
+    - true
+    - it is true
+    - it's right
+    - it's the truth
+    - it's true
+    - that is correct
+    - that is right
+    - that is true
+    - that is very true
+    - that's correct
+    - that's so true
+    - you are correct
+    - you are so right
+    - you're absolutely right
+    - you're right about that
+    - I know that's right
+- intent: agent.sure
+  examples: |
+    - are you sure?
+    - are you sure right now?
+    - are you sure today?
+    - are you sure now?
+    - are you sure tonight?
+    - are you positive?
+    - are you completely sure?
+    - are you fully positive?
+    - are you sure about it?
+    - are you so sure?
+    - are you truly positive?
 - intent: agent.talk_to_me
   examples: |
     - why aren't you talking to me?
@@ -960,3 +1350,8 @@ nlu:
     - woow
     - wow!!
     - wheey
+- intent: just_browsing
+  examples: |
+    - just browsing
+    - browsing
+    - only just browsing

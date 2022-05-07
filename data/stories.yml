@@ -2,6 +2,282 @@ version: "2.0"
 
 stories:
 
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: bot_challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: problem_email
+  steps:
+  - intent: problem_email
+  - action: utter_ask_email
+  - intent: inform
+  - action: utter_problem_email
+
+- story: password_reset
+  steps:
+  - intent: password_reset
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: "pedro_mario@gmail.com"
+  - slot_was_set:
+    - email: "pedro_mario@gmail.com"
+  - action: action_password_reset
+  - action: action_restart
+
+- story: out_of_scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: help
+  steps:
+  - intent: help
+  - action: utter_help
+
+- story: incident_status
+  steps:
+  - intent: incident_status
+  - action: utter_incident_status
+  - intent: incident_status_Id
+    entities:
+    - incident_status_Id: "11"
+  - slot_was_set:
+    - incident_status_Id: "11"
+  - action: action_incident_status_Id
+  - action: action_restart
+
+- story: open_incident
+  steps:
+  - intent: open_incident
+  - action: utter_open_incident
+  - intent: password_reset
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: "pedro_mario@gmail.com"
+  - slot_was_set:
+    - email: "pedro_mario@gmail.com"
+  - action: action_open_incident
+  - action: action_restart
+
+- story: open_incident
+  steps:
+  - intent: open_incident
+  - action: utter_open_incident
+  - intent: problem_email
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: "pedro_mario@gmail.com"
+  - slot_was_set:
+    - email: "pedro_mario@gmail.com"
+  - action: action_open_incident
+  - action: action_restart
+
+- story: open_incident
+  steps:
+  - intent: open_incident
+  - action: utter_open_incident
+  - intent: help
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: "pedro_mario@gmail.com"
+  - slot_was_set:
+    - email: "pedro_mario@gmail.com"
+  - action: action_open_incident
+  - action: action_restart
+
+- story: open_incident
+  steps:
+  - intent: open_incident
+  - action: utter_open_incident
+  - intent: any_other
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: "pedro_mario@gmail.com"
+  - slot_was_set:
+    - email: "pedro_mario@gmail.com"
+  - action: action_open_incident
+  - action: action_restart
+
+
+- story: request report
+  steps:
+  - intent: request_report
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: "pedro_mario@gmail.com"
+  - slot_was_set:
+    - email: "pedro_mario@gmail.com"
+  - action: utter_request_report
+
+- story: internet
+  steps:
+  - intent: internet
+  - action: utter_internet
+
+
+- story: thank
+  steps:
+  - intent: thank
+  - action: utter_thank
+
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: ask_questions
+  - action: utter_wait_questions
+
+
+- story: goodbye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: bot_challenge
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: problem_email
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: problem_email
+  - action: utter_ask_email
+  - intent: inform
+  - action: utter_problem_email
+
+- story: password_reset
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: password_reset
+  - action: utter_ask_email
+  - intent: inform
+  - action: utter_password_reset
+
+- story: out_of_scope
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: help
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: help
+  - action: utter_help
+
+- story: incident_status
+  steps:
+  - intent: incident_status
+  - action: utter_incident_status
+
+- story: open_incident
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: open_incident
+  - action: utter_open_incident
+  - or:
+    - intent: password_reset
+    - intent: problem_email
+    - intent: help
+    - intent: any_other
+  - action: utter_open_incident
+
+
+- story: request report
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: request_report
+  - action: utter_ask_email
+  - intent: inform
+  - action: utter_request_report
+
+- story: internet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: internet
+  - action: utter_internet
+
+
+- story: thank
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_questions
+  - action: utter_wait_questions
+  - intent: thank
+  - action: utter_thank
+
+
+
+
+
+- story: ask_questions
+  steps:
+  - intent: ask_questions
+  - action: utter_wait_questions
+
+- story: ask_questions
+  steps:
+  - intent: ask_questions
+  - action: utter_wait_questions
+
+- story: chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+
 - story: story 01
   steps:
   - intent: agent.acquaintance
@@ -26,6 +302,14 @@ stories:
   steps:
   - intent: agent.be_clever
   - action: utter_agent.be_clever
+- story: story 07
+  steps:
+  - intent: agent.beautiful
+  - action: utter_agent.beautiful
+- story: story 08
+  steps:
+  - intent: agent.birth_date
+  - action: utter_agent.birth_date
 - story: story 09
   steps:
   - intent: agent.boring
@@ -50,10 +334,66 @@ stories:
   steps:
   - intent: agent.crazy
   - action: utter_agent.crazy
+- story: story 16
+  steps:
+  - intent: agent.fired
+  - action: utter_agent.fired
 - story: story 17
   steps:
   - intent: agent.funny
   - action: utter_agent.funny
+- story: story 18
+  steps:
+  - intent: agent.good
+  - action: utter_agent.good
+- story: story 19
+  steps:
+  - intent: agent.happy
+  - action: utter_agent.happy
+- story: story 20
+  steps:
+  - intent: agent.hobby
+  - action: utter_agent.hobby
+- story: story 21
+  steps:
+  - intent: agent.hungry
+  - action: utter_agent.hungry
+- story: story 22
+  steps:
+  - intent: agent.marry_user
+  - action: utter_agent.marry_user
+- story: story 23
+  steps:
+  - intent: agent.my_friend
+  - action: utter_agent.my_friend
+- story: story 24
+  steps:
+  - intent: agent.occupation
+  - action: utter_agent.occupation
+- story: story 25
+  steps:
+  - intent: agent.origin
+  - action: utter_agent.origin
+- story: story 26
+  steps:
+  - intent: agent.ready
+  - action: utter_agent.ready
+- story: story 27
+  steps:
+  - intent: agent.real
+  - action: utter_agent.real
+- story: story 28
+  steps:
+  - intent: agent.residence
+  - action: utter_agent.residence
+- story: story 29
+  steps:
+  - intent: agent.right
+  - action: utter_agent.right
+- story: story 30
+  steps:
+  - intent: agent.sure
+  - action: utter_agent.sure
 - story: story 31
   steps:
   - intent: agent.talk_to_me
