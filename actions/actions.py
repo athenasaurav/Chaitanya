@@ -12,7 +12,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import Form, AllSlotsReset, Restarted
-import re
+import config
 import mysql.connector as sql
 
 class ActionPasswordReset(Action):
@@ -26,14 +26,14 @@ class ActionPasswordReset(Action):
 
 
         connection = sql.connect(
-        host="localhost",
-        user="root",
-        password="12345",
-        database="rasa_db"
+        host=config.host,
+        user=config.user,
+        password=config.password,
+        database=config.database
         )
         cursor = connection.cursor()
         email = str(tracker.get_slot("email")).lower()
-        cursor.execute("Select * from login where Email='{}' ".format(email))
+        cursor.execute("Select * from {} where Email='{}' ".format(config.LOGIN_TABLE_NAME, email))
         result = cursor.fetchall()
         if len(result) == 0:
             dispatcher.utter_message("Sorry we couldn't find Email in our database")
@@ -56,14 +56,14 @@ class ActionIncidentStatusId(Action):
 
 
         connection = sql.connect(
-        host="localhost",
-        user="root",
-        password="12345",
-        database="rasa_db"
+        host=config.host,
+        user=config.user,
+        password=config.password,
+        database=config.database
         )
         cursor = connection.cursor()
         incident_status_Id = str(tracker.get_slot("incident_status_Id")).lower()
-        cursor.execute("Select * from incident where Id='{}' ".format(incident_status_Id))
+        cursor.execute("Select * from {} where Id='{}' ".format(config.INCIDENT_TABLE_NAME, incident_status_Id))
         result = cursor.fetchall()
         if len(result) == 0:
             dispatcher.utter_message("Sorry we couldn't find Email in our database")
@@ -86,26 +86,26 @@ class ActionOpenIncident(Action):
 
 
         connection = sql.connect(
-        host="localhost",
-        user="root",
-        password="12345",
-        database="rasa_db"
+        host=config.host,
+        user=config.user,
+        password=config.password,
+        database=config.database
         )
         cursor = connection.cursor()
         email = str(tracker.get_slot("email")).lower()
-        cursor.execute("Select * from incident ")
+        cursor.execute("Select * from {}".format(config.INCIDENT_TABLE_NAME))
         result = cursor.fetchall()
         new_id = len(result) + 1
         status = 'unresolved'
         open_incident = (email, new_id, status)
-        query = "INSERT INTO rasa_db.incident VALUES (%s,%s,%s)"
+        query = "INSERT INTO {}.{} VALUES (%s,%s,%s)".format(config.database, config.INCIDENT_TABLE_NAME)
         cursor.execute(query, tuple(open_incident))
         connection.commit()
         dispatcher.utter_message("Incident opened successfully. Email : {} , id: {}, status : {}".format(email, new_id, status))
 
         return []
-    
-    
+
+
 class ActionRestarted(Action):
     def name(self):
         return "action_restart"
@@ -114,6 +114,3 @@ class ActionRestarted(Action):
 
         # dispatcher.utter_message(template="utter_greet")
         return [Form(None), AllSlotsReset(None), Restarted(None)]
-    
-  
-  
