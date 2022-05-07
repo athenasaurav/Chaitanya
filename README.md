@@ -43,36 +43,6 @@ NOTE : Please check Python version should be 3.7 or greater and pip should be in
 If the rasa installation gives error, try this [solution](https://stackoverflow.com/questions/64291087/matplotlib-module-sip-has-no-attribute-setapi)
 
 
-## Installation Complete
-
-## Get files
-
-To download the RASA files from github run the following command 
-
-- > git clone https://github.com/athenasaurav/Chaitanya.git
-
-Move inside directory
-
-- > cd Chaitanya
-
-Open a new Anaconda Prompt
-
-- > rasa train
-
-
-## RUN Chatbot
-
-Open one Ananconda prompt and move into ```Chaitanya``` folder
-
-- > rasa run -m models --enable-api --cors “*” --debug
-
-
-## Chat with Bot
-
-Click on ```index.html``` in the folder to open in browser and start chatting
-
-
-
 ### MySQL Installation
 
 We first need to install MySQL Workbench community edition for windows
@@ -100,3 +70,42 @@ Install Pandas
 Install SQLAlchemy
 
 - > pip install SQLAlchemy
+
+## Installation Complete
+
+## Get files
+
+To download the RASA files from github run the following command 
+
+- > git clone https://github.com/athenasaurav/Chaitanya.git
+
+Move inside directory
+
+- > cd Chaitanya
+
+## Create Intial Database
+
+Run the following command in an Anaconda prompt
+
+- > python create_database.py
+
+Note : Please run this file only once.
+
+Open a new Anaconda Prompt
+
+- > rasa train
+
+## RUN Chatbot
+
+Open one Ananconda prompt and move into ```Chaitanya``` folder
+
+- > rasa run -m models --enable-api --cors “*” --debug
+
+
+## Chat with Bot
+
+Click on ```index.html``` in the folder to open in browser and start chatting
+
+
+
+
