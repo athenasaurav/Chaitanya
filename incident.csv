@@ -1,0 +1,8 @@
+Email,Id,status
+test@example.com,1,resolved
+name.name@yahoo.com,2,unresolved
+geo@gmail.com,3,resolved
+pedro_mario@gmail.com,4,unresolved
+kumar@prescient.com,5,resolved
+chaitanya@yahoo.com,6,unresolved
+chaitanya@gmail.com,7,resolved
