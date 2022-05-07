@@ -23,14 +23,14 @@ rules:
   - intent: just_browsing
   - action: utter_browsing
 
-- rule: incident_id
-  steps:
-  - intent: incident_status_Id
-    entities:
-    - incident_status_Id: "11"
-  - slot_was_set:
-    - incident_status_Id: "11"
-  - action: action_incident_status_Id
+# - rule: incident_id
+#   steps:
+#   - intent: incident_status_Id
+#     entities:
+#     - incident_status_Id: "11"
+#   - slot_was_set:
+#     - incident_status_Id: "11"
+#   - action: action_incident_status_Id
 
 - rule: greet
   steps:
@@ -43,15 +43,15 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: problem_email
-  steps:
-  - intent: problem_email
-  - action: utter_problem_email
+# - rule: problem_email
+#   steps:
+#   - intent: problem_email
+#   - action: utter_problem_email
 
-- rule: password_reset
-  steps:
-  - intent: password_reset
-  - action: utter_password_reset
+# - rule: password_reset
+#   steps:
+#   - intent: password_reset
+#   - action: utter_password_reset
 
 - rule: out_of_scope
   steps:
@@ -63,21 +63,21 @@ rules:
   - intent: help
   - action: utter_help
 
-- rule: incident_status
-  steps:
-  - intent: incident_status
-  - action: utter_incident_status
+# - rule: incident_status
+#   steps:
+#   - intent: incident_status
+#   - action: utter_incident_status
 
-- rule: open_incident
-  steps:
-  - intent: open_incident
-  - action: utter_open_incident
+# - rule: open_incident
+#   steps:
+#   - intent: open_incident
+#   - action: utter_open_incident
 
 
-- rule: request report
-  steps:
-  - intent: request_report
-  - action: utter_request_report
+# - rule: request report
+#   steps:
+#   - intent: request_report
+#   - action: utter_request_report
 
 - rule: internet
   steps:
