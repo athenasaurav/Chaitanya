@@ -29,17 +29,48 @@ intents:
 - agent.answer_my_question
 - agent.bad
 - agent.be_clever
+- agent.beautiful
+- agent.birth_date
 - agent.boring
 - agent.boss
 - agent.busy
 - agent.can_you_help
 - agent.clever
 - agent.crazy
+- agent.fired
 - agent.funny
+- agent.good
+- agent.happy
+- agent.hobby
+- agent.hungry
+- agent.marry_user
+- agent.my_friend
+- agent.occupation
+- agent.origin
+- agent.ready
+- agent.real
+- agent.residence
+- agent.right
+- agent.sure
 - agent.talk_to_me
 - agent.there
 - emotions.ha_ha
 - emotions.wow
+- incident_status_Id
+
+entities:
+- email
+- incident_status_Id
+
+slots:
+  email:
+    type: text
+    influence_conversation: false
+  incident_status_Id:
+    type: text
+    influence_conversation: false
+
+
 
 responses:
   utter_out_of_scope:
@@ -53,8 +84,6 @@ responses:
         payload: "ask questions"
       - title: "Just browsing 👀 "
         payload: "just browsing"
-  utter_any_other:
-  - text: For General Queries either create a issue/ticket or raise a request by mailing at issue@abc.com
   utter_goodbye:
   - text: Goodbye!
   utter_chitchat:
@@ -68,7 +97,7 @@ responses:
   utter_ask_email:
   - text: What is your email address?
   utter_password_reset:
-  - text: To reset the password. Click on the Forget my Password button and Enter your recovery ID on https://login.abc.com
+  - text: Your Email Password has been reset.
   utter_problem_email:
   - text: Go to link abc.com/create_ticket and create a Email issue there.
   utter_help:
@@ -78,13 +107,13 @@ responses:
   utter_default:
   - text: I didn't quite understand that. Could you rephrase?
   utter_incident_status:
-  - text: To check your incident status. Please go to https://abc.com/incident_query and enter your Incident ID.
+  - text: Please tell me your incident status ID.
   utter_handoff:
   - text: There is no human agent available right now. 
   utter_open_incident:
-  - text: To Open a new incident. Go to https://abc.com. Login from your registered email and under create issue, you can create new issue.
+  - text: We have created a issue and details have been emailed to you. Please save Incident ID safely.
   utter_request_report:
-  - text: To download Report. Go to https://abc.com. Login from your registered email and Project Menu, click on Request Reports and select the tenure and download the report.
+  - text: We are preparing your report and you will receive it soon in your email.
   utter_internet:
   - text: We are working on it. Thank You for your patience.
   utter_thank:
@@ -247,3 +276,8 @@ responses:
 
   utter_emotions.wow:
   - text: "Wow indeed!"
+
+actions:
+- action_password_reset
+- action_incident_status_Id
+- action_open_incident
