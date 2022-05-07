@@ -104,3 +104,16 @@ class ActionOpenIncident(Action):
         dispatcher.utter_message("Incident opened successfully. Email : {} , id: {}, status : {}".format(email, new_id, status))
 
         return []
+    
+    
+class ActionRestarted(Action):
+    def name(self):
+        return "action_restart"
+
+    def run(self, dispatcher, tracker, domain):
+
+        # dispatcher.utter_message(template="utter_greet")
+        return [Form(None), AllSlotsReset(None), Restarted(None)]
+    
+  
+  
