@@ -102,6 +102,11 @@ Open one Ananconda prompt and move into ```Chaitanya``` folder
 - > rasa run -m models --enable-api --cors “*” --debug
 
 
+Open another Ananconda prompt and move into ```Chaitanya``` folder
+
+- > rasa run actions
+
+
 ## Chat with Bot
 
 Click on ```index.html``` in the folder to open in browser and start chatting
